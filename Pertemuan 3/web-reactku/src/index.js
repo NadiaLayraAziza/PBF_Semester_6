@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 // import HelloComponent from "./component/HelloComponent";
+// import StateFullComponent from "./container/StateFullComponent";
 import LoginComponent from "./component/LoginComponent";
 
 ReactDOM.render(<LoginComponent />, document.getElementById("root"));
