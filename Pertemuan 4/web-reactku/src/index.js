@@ -5,10 +5,12 @@ import './index.css';
 // import App from './App';
 import reportWebVitals from './reportWebVitals';
 // import * as serviceWorker from './serviceWorker';
+// import BlogPost from "./container/BlogPost/BlogPost";
+import MahasiswaPost from './container/MahasiswaPost/MahasiswaPost';
 
-import BlogPost from "./container/BlogPost/BlogPost";
+ReactDOM.render(<MahasiswaPost />, document.getElementById('content'));
 
-ReactDOM.render(<BlogPost />, document.getElementById('content'));
+// ReactDOM.render(<BlogPost />, document.getElementById('content'));
 
 // serviceWorker.unregister();
 
