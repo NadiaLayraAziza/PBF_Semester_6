@@ -1,0 +1,150 @@
+.product {
+    display: inline-block;
+    background-color: whitesmoke;
+    margin: 10px;
+    border: 1px solid #eee;
+    box-shadow: 0 3px 3px #ccc;
+    width: 300px;
+    height: 300px;
+    padding: 30px;
+}
+.home{
+    text-align: center;
+    border: 3px solid rgb(96, 96, 121);
+    padding: 25px 0;
+    margin-top: 25px;
+    background-image: url('https://img.freepik.com/free-vector/abstract-white-grey-background_528453-23.jpg?size=626&ext=jpg');
+}
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+  /* Global Styles */
+:root {
+    --nav-primary-color: rgb(160, 166, 168);
+    --nav-text-color:Black;
+    --nav-a-hov-color:Blue;
+}
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    background-color: #fff;
+    color: #333;
+}
+a {
+    color: rgb(84, 113, 175);
+    text-decoration: none;
+    font-weight: bold;
+}
+a:hover {
+    color: rgb(36, 61, 116);
+}
+ul {
+    list-style: none;
+}
+img {
+    width: 70%;
+    height: 70%;
+    align-self: center;
+}
+  /* Utilities */
+.container {
+    max-width: 1100px;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 2rem;
+    background-image: "https://gostyle.vn/wp-content/uploads/2020/10/y-nghia-chua-ai-biet-ve-logo-cua-thuong-hieu-dior-1.png";
+}
+/* Text Styles*/
+.x-large {
+    font-size: 4rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+.large {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+.bg-primary{
+    background: var(--nav-primary-color);
+    color: var(--nav-text-color);
+}
+  /* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 4rem;
+    z-index: 1;
+    width: 100%;
+    opacity: 0.9;
+    margin-bottom: 3rem;
+}
+.navbar ul {
+    display: flex;
+}
+.navbar a {
+    color: var(--nav-text-color);
+    padding: 0.45rem;
+    margin: 0 0.25rem;
+}
+.navbar a:hover {
+    color: var(--nav-a-hov-color);
+}
+  /* Mobile Styles */
+@media (max-width: 700px) {
+    .hide-sm {
+    display: none;
+    }
+    .grid-2,
+    .grid-3,
+    .grid-4 {
+        grid-template-columns: 1fr;
+    }
+    /* Text Styles */
+    .x-large {
+        font-size: 3rem;
+    }
+    .large {
+        font-size: 2rem;
+    }
+    .lead {
+        font-size: 1rem;
+    }
+    /* Navbar */
+    .navbar {
+        display: block;
+        text-align: center;
+    }
+    .navbar ul {
+        text-align: center;
+        justify-content: center;
+    }
+}
+
+.button {
+    display: inline-block;
+    padding: 5px 5px;
+    font-size: 12px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: rgb(64, 135, 182);
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 3px #999;
+}
+
+.button:hover {background-color: #26598a}
+
+.button:active {
+    background-color: #26598a;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
