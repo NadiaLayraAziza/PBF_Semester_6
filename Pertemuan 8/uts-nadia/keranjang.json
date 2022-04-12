@@ -1,0 +1,39 @@
+{
+  "cart": [
+    {
+      "userId": 1,
+      "id": 1616931467672,
+      "nama": "ASUS ROG ZEPHYRUS DUO GX551QR-R937D6T",
+      "harga": 49999000,
+      "total_qty": 1,
+      "total_harga": 49999000
+    },
+    {
+      "userId": 2,
+      "id": 1616940949554,
+      "nama": "ACER PREDATOR NITRO 5",
+      "harga": 14650000,
+      "total_qty": 1,
+      "total_harga": 14650000
+    },
+    {
+      "userId": 1,
+      "id": 1649767877598,
+      "nama": "ASUS ROG ZEPHYRUS DUO GX551QR-R937D6T",
+      "harga": 49999000,
+      "total_qty": 3,
+      "total_harga": 149997000
+    },
+    {
+      "userId": 9,
+      "id": 1649781847187,
+      "nama": "Dell Alienware m15 R3",
+      "harga": 32499000,
+      "total_qty": 7,
+      "total_harga": 227493000
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
