@@ -28,11 +28,11 @@ class BlogPost extends Component {
     }
 
     handleHapusArtikel = (data) => {        // fungsi yang meng-handle button action hapus data
-        fetch(`http://localhost:3001/posts/${data}`,{method: 'DELETE'})     // alamat URL API yang ingin kita hapus datanya
-        .then(res => {          // ketika proses hapus berhasil, maka ambil data dari server API lokal
-            this.ambilDataDariServerAPI()
+        API.deleteNewsBlog(data)
+        .then((response)=>{
+            this.ambilDataDariServerAPI();  // reload / refresh data
         })
-    }
+    };
 
     handleTambahArtikel = (event) => {        // fungsi untuk meng-handle form tambah data artikel
         let formInsertArtikel = { ...this.state.insertArtikel };        // cloning data state insertArtikel ke dalam variabel formInsertArtikel

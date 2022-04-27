@@ -32,12 +32,26 @@ const PostAPI = (path, data) => {
     return promise;
 }
 
+const DeleteAPI = (path, data) => {
+    const promise = new Promise((resolve, reject) => {
+        fetch(`${domainPath}/${path}/${data}`, { method: "DELETE" })    // alamat url API yang ingin kita HAPUS datanya
+            .then((result) => {
+                resolve(result);                // jika success menerima response dari server maka resolve response e user
+            }, (err) => {
+                reject(err);                    // jika terjadi error dari server (server down, dll),
+            })
+    })
+    return promise;
+}
+
 const getNewsBlog = () => GetAPI('posts?_sort=id&_order=desc'); 
 const postNewsBlog = (dataYgDikirim) => PostAPI('posts', dataYgDikirim);
+const deleteNewsBlog = (dataYgDihapus) => DeleteAPI('posts', dataYgDihapus);
 
 const API = {       // inisialisasi function-function yang akan disediakan global API. 
     getNewsBlog,
-    postNewsBlog
+    postNewsBlog,
+    deleteNewsBlog
 }
 
 export default API; 
