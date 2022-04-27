@@ -7,15 +7,37 @@ const GetAPI = (path) => {                  // path digunakan untuk menunjuk ala
             .then((result) => { 
                 resolve(result);                    // jika success menerima response dari server maka resolve response e user  
             }, (err) => { 
-                reject(err);                        // jika to di error dari server (server down, dll), 
+                reject(err);                        // jika terjadi error dari server (server down, dll), 
             })                                      // Maka kirim pesan error ke user melalui reject.   
     })
     return promise; 
 }
 
+const PostAPI = (path, data) => {
+    const promise = new Promise((resolve, reject) => {
+        fetch(`${domainPath}/${path}`, {
+                method: 'post',                     // method POST untuk input/insert data
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)      // kirimkan ke body request untuk data artikel yang akan ditambahkan (insert)
+            })
+            .then((result) => {
+                resolve(result);                // jika success menerima response dari server maka resolve response e user  
+            }, (err) => {
+                reject(err);                    // jika terjadi error dari server (server down, dll), 
+            })
+    })
+    return promise;
+}
+
 const getNewsBlog = () => GetAPI('posts?_sort=id&_order=desc'); 
+const postNewsBlog = (dataYgDikirim) => PostAPI('posts', dataYgDikirim);
+
 const API = {       // inisialisasi function-function yang akan disediakan global API. 
-    getNewsBlog
+    getNewsBlog,
+    postNewsBlog
 }
 
 export default API; 

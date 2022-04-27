@@ -22,17 +22,6 @@ class BlogPost extends Component {
         })
     }
 
-    // ambilDataDariServerAPI = () => {
-    //     // fetch('https://jsonplaceholder.typicode.com/posts')         // alamat URL API yang ingin kita ambil datanya
-    //     fetch('http://localhost:3001/posts?_sort=id&_order=desc')      // penambahan sort dan order berdasarkan parameter
-    //         .then(Response => Response.json())      // ubah response dari data URL API menjadi sebuah data json
-    //         .then(jsonHasilAmbilDariAPI => {        // data json hasil ambil dari API kita masukkan ke dalam listArtikel pada state
-    //             this.setState({
-    //                 listArtikel: jsonHasilAmbilDariAPI
-    //             })
-    //         })
-    // }
-
     componentDidMount() {       // komponen untuk mengecek ketika component telah dimount-ing, maka panggil API
         this.ambilDataDariServerAPI()   // ambil data dari server API lokal
         
@@ -56,17 +45,10 @@ class BlogPost extends Component {
     };
     
     handleTombolSimpan = () => {            // fungsi untuk meng-handle tombol simpan
-        fetch("http://localhost:3001/posts", {
-            method: 'post',                                 // method POST untuk input/insert data
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(this.state.insertArtikel)  // kirimkan ke body request untuk data artikel yang akan ditambahkan (insert)
+        API.postNewsBlog(this.state.insertArtikel)
+        .then((response) => {
+            this.ambilDataDariServerAPI();                              // reload / refresh data
         })
-            .then((response) => {
-                this.ambilDataDariSeverAPI();               // reload / refresh data
-        });
     }
 
     render() {
