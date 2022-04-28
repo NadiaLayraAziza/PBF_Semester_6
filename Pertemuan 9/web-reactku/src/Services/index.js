@@ -1,4 +1,8 @@
-const domainPath = 'http://localhost:3001'; // simpan url domain server API pada variabel, sehingga bisa dinamis, (diganti) 
+import GetAPI from './Get';
+import PostAPI from './Post';
+import DeleteAPI from './Delete';
+
+/* const domainPath = 'http://localhost:3001'; // simpan url domain server API pada variabel, sehingga bisa dinamis, (diganti) 
 
 const GetAPI = (path) => {                  // path digunakan untuk menunjuk alamat API mana yang akan di-request 
     const promise = new Promise((resolve, reject) => {
@@ -42,10 +46,15 @@ const DeleteAPI = (path, data) => {
             })
     })
     return promise;
-}
+} */ 
 
+// Daftar API - GET
 const getNewsBlog = () => GetAPI('posts?_sort=id&_order=desc'); 
+
+// Daftar API - POST
 const postNewsBlog = (dataYgDikirim) => PostAPI('posts', dataYgDikirim);
+
+// Daftar API - DELETE
 const deleteNewsBlog = (dataYgDihapus) => DeleteAPI('posts', dataYgDihapus);
 
 const API = {       // inisialisasi function-function yang akan disediakan global API. 
@@ -55,3 +64,4 @@ const API = {       // inisialisasi function-function yang akan disediakan globa
 }
 
 export default API; 
+
