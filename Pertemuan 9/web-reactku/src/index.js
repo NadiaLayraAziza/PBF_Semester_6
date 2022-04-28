@@ -8,9 +8,9 @@ import reportWebVitals from './reportWebVitals';
 import BlogPost from "./container/BlogPost/BlogPost";
 import MahasiswaPost from './container/MahasiswaPost/MahasiswaPost';
 
-// ReactDOM.render(<MahasiswaPost />, document.getElementById('content'));
+ReactDOM.render(<MahasiswaPost />, document.getElementById('content'));
 
-ReactDOM.render(<BlogPost />, document.getElementById('content'));
+// ReactDOM.render(<BlogPost />, document.getElementById('content'));
 
 // serviceWorker.unregister();
 

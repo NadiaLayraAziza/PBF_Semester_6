@@ -1,6 +1,32 @@
 import GetAPI from './Get';
 import PostAPI from './Post';
-import DeleteAPI from './Delete';
+import DeleteAPI from './Delete'; 
+
+// Daftar API - GET
+const getNewsBlog = () => GetAPI('posts?_sort=id&_order=desc'); 
+
+// Daftar API - POST
+const postNewsBlog = (dataYgDikirim) => PostAPI('posts', dataYgDikirim);
+
+// Daftar API - DELETE
+const deleteNewsBlog = (dataYgDihapus) => DeleteAPI('posts', dataYgDihapus);
+
+// Daftar API GET, POST, DELETE - Tugas 
+const getNewsMahasiswa = () => GetAPI('mahasiswa?_sort=id&_order=desc');
+const postNewsMahasiswa = (dataYgDikirim) => PostAPI('mahasiswa', dataYgDikirim);
+const deleteNewsMahasiswa = (dataYgDihapus) => DeleteAPI('mahasiswa', dataYgDihapus);
+
+const API = {       // inisialisasi function-function yang akan disediakan global API. 
+    getNewsBlog,
+    postNewsBlog,
+    deleteNewsBlog,
+    // inisialisasi function untuk tugas 
+    getNewsMahasiswa,
+    postNewsMahasiswa,
+    deleteNewsMahasiswa
+}
+
+export default API; 
 
 /* const domainPath = 'http://localhost:3001'; // simpan url domain server API pada variabel, sehingga bisa dinamis, (diganti) 
 
@@ -46,22 +72,5 @@ const DeleteAPI = (path, data) => {
             })
     })
     return promise;
-} */ 
-
-// Daftar API - GET
-const getNewsBlog = () => GetAPI('posts?_sort=id&_order=desc'); 
-
-// Daftar API - POST
-const postNewsBlog = (dataYgDikirim) => PostAPI('posts', dataYgDikirim);
-
-// Daftar API - DELETE
-const deleteNewsBlog = (dataYgDihapus) => DeleteAPI('posts', dataYgDihapus);
-
-const API = {       // inisialisasi function-function yang akan disediakan global API. 
-    getNewsBlog,
-    postNewsBlog,
-    deleteNewsBlog
-}
-
-export default API; 
+} */
 
